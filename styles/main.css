@@ -1,0 +1,680 @@
+* {
+  box-sizing: border-box;
+  font-family: Gill Sans, sans-serif;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+/* The remnants of an attempt to make a shape
+
+.rectanglePart {
+  display: inline-block;
+  position: absolute;
+  width: 140px;
+  height: 80px;
+  background: blue;
+}
+*/
+
+
+.backgroundImage {
+  /* http://stackoverflow.com/questions/26621513/darken-css-background-image */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/assets/bg.jpg");
+  background-repeat: no-repeat;
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Scaling_background_images ---- MUCH better than 100% as value */
+  background-size: cover;
+}
+
+
+.mainDiv--centered {
+  margin: 0 auto;
+  width: 1024px;
+  padding-bottom: 36px;
+
+}
+
+/* subscribe link */
+.subscribe {
+  display: inline;
+  margin-left: 56%;
+  vertical-align: top;
+}
+
+.subscribe__link {
+  position: relative;
+  display: inline-block;
+  color: rgb(252, 252, 252);
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.subscribe__link:hover {
+  letter-spacing: .3rem;
+}
+
+.subscribe__dot--1 {
+  position: relative;
+  display: inline-block;
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+	width: 4px;
+	height: 4px;
+  vertical-align: top;
+  margin-top: 27px;
+}
+
+.dots__stack--container {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 60px;
+}
+
+/* Tried to use a flex box to space out but dont fully understand how to use it yet. */
+.dots__stack {
+  position: relative;
+  display: flex;
+  background-color: rgb(252, 252, 252);
+  border-radius: 50%;
+	width: 4px;
+	height: 4px;
+  margin-bottom: 5px;
+}
+
+.dots__stack:nth-child(1) {
+  margin-top: 13px;
+}
+
+/* main social media navbar styling */
+.mediaBar {
+  width: 50%;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*
+facebook color: 68	88	151
+rss color: 204	143	50
+twitter color: 106	141	199
+youtube color: 178	56	45
+red for buttons: 180	41	46
+*/
+
+.socialMedia {
+  position: relative;
+  display: inline-block;
+  height: 4rem;
+  width: 4rem;
+  margin: 0px 0.2%;
+  vertical-align: top;
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  transition: box-shadow .6s;
+}
+
+.socialMedia:nth-child(2,3) {
+  margin: 0 0.2%
+}
+
+.socialMedia:hover {
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+/*styling for the social media icon images*/
+.img--size {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  opacity: 0.2;
+  margin-top: 9px;
+  margin-left: 12px;
+  text-align: center;
+  transform: translate(8%, 10%);
+}
+
+.facebook--icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  transform: translate(0, 0);
+}
+
+.facebook {
+  background-color: rgb(68, 88, 151);
+}
+
+.rss {
+  background-color: rgb(204, 143, 50);
+}
+.twitter {
+  background-color: rgb(106, 141, 199);
+}
+.youtube {
+  background-color: rgb(178, 56, 45);
+}
+
+/* main navbar*/
+.menuBar {
+  display: inline-block;
+  margin-top: 86px;
+  width: 100%;
+  height: 2rem;
+  font-size: 0;
+}
+/*main navbar buttons*/
+.menuBar .menuBar--button + .menuBar--button {
+  margin-left: 1.3%;
+}
+.menuBar--button {
+  font-size: 1.2rem;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgb(180, 41, 46);
+  width: 24%;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: center;
+  text-align: center;
+  /*
+  found this at http://www.w3schools.com/cssref/css3_pr_box-shadow.asp
+  adding a border with opacity showed the color of it's own element instead of being translucent to the background image
+  the values of the property control x-position, y-position, and the softness of the edge
+  */
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  transition: box-shadow .6s;
+  transition: letter-spacing .6s;
+}
+
+.menuBar--button:hover {
+  box-shadow: 0px 4px 0px rgb(255, 203, 7);
+  transition: box-shadow .6s;
+  letter-spacing: 0.3rem;
+  transition: letter-spacing .6s;
+}
+
+
+.carousel__main {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 360px;
+  background-image: url("../assets/top-image.png");
+  /* "Tip: Always set a background-color to be used if the image is unavailable."
+  http://www.w3schools.com/cssref/pr_background-image.asp
+  */
+  background-color: rgb(168, 167, 166);
+  /*
+  http://www.w3schools.com/cssref/pr_background-position.asp
+    	"The first value is the horizontal position and the second value is the vertical. The top left corner is 0 0. Units can be pixels (0px 0px) or any other CSS units. If you only specify one value, the other value will be 50%. You can mix % and positions"
+  */
+  background-position: 35% 20%;
+  border: 10px solid rgb(251, 251, 251);
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  padding-right: 547px;
+  padding-top: 50px;
+  margin-top: 20px;
+  overflow: hidden;
+
+}
+
+.gridFilter {
+  position: absolute;
+  background-image: url("../assets/grid.png");
+  width: 100%;
+  height: 360px;
+  top: 0;
+  opacity: .5;
+}
+
+.logo{
+  position: absolute;
+  width: 400px;
+  height: 240px;
+  opacity: 1;
+  margin-left: 16px;
+}
+
+/*buttons container*/
+.carousel__buttons {
+  display: inline-block;
+  margin: 22px 480px;
+  vertical-align: top;
+}
+
+.carousel__buttons--link {
+  vertical-align: top;
+}
+
+.carousel__buttons--circle {
+  display: inline-block;
+  background-color: rgb(227, 227, 227);
+  border-radius: 50%;
+	width: 16px;
+	height: 16px;
+  box-shadow: 0px 3px 0px rgba(255, 255, 255, 0.5);
+  transition: box-shadow .6s;
+}
+
+.carousel__buttons--circle:hover {
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+.innerDot {
+   /*didn't really know how to position this*/
+  position: relative;
+  display: inline-block;
+  background-color: rgb(180, 41, 46);
+  border-radius: 50%;
+	width: 50%;
+  height: 50%;
+  transform: translate(50%, -55%);
+}
+
+
+/* article grid*/
+.grid__row {
+  width: 100%;
+  font-size: 0;
+  position: relative;
+  overflow: none;
+}
+
+.grid__column {
+  position:relative;
+}
+
+.article {
+  position: relative;
+  display: inline-block;
+  background-color: rgb(252, 252, 252);
+  width: 32.65%;
+  height: 350px;
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  vertical-align: top;
+  padding: 0 3%;
+  overflow-x: none;
+  transition: box-shadow .6s;
+}
+
+.article:hover {
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+
+.article:nth-child(even) {
+  margin: 0 1%;
+}
+
+.article__title--link {
+  color: black;
+}
+
+.article__title--link:hover {
+  color: rgb(181, 46, 41);
+}
+
+.article__title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  position:relative;
+  margin: 5% 0;
+  text-decoration: none;
+}
+
+.timestamp {
+  font-size: 1.3rem;
+  color: rgb(173, 173, 173);
+}
+
+.article__preview {
+  font-size: 1rem;
+  line-height: 200%;
+}
+
+.readMore {
+  position: absolute;
+  left: auto;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, -50%);
+  font-size: .8rem;
+  font-weight: 600;
+  transition: letter-spacing .6s;
+}
+
+.readMore__link {
+  text-decoration: none;
+  color: rgb(180, 41, 46);
+}
+
+.readMore:hover {
+  letter-spacing: 0.3rem;
+  transition: letter-spacing .6s;
+}
+
+
+
+/* bio grid with pictures*/
+.bios {
+  display: inline-block;
+  margin-top: 24px;
+  width: 100%;
+  height: 29.7rem;
+  font-size: 0;
+}
+
+.bios__container {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  transition: box-shadow .6s;
+}
+
+.bios__container:hover {
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+/*.bios:nth-child(2,3) {
+  margin-left: 1%;
+}
+won't work because of html structure?
+*/
+
+
+.bios__link {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  transition: letter-spacing .6s;
+}
+
+.bios__heading {
+  display: inline-block;
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: tanslate(-50%, -50%)
+}
+
+.bios__link:hover {
+  letter-spacing: 0.5rem;
+  transition: letter-spacing .6s;
+  /*transition: letter-spacing .6s;*/
+}
+
+.lance {
+  background-image: url("../assets/sk8er-4.png");
+  background-position: 80% 20%;
+  width: 32.67%;
+  height: 49.5%;
+  border: 5px solid rgb(227, 227, 227);
+  transition: letter-spacting .6s;
+}
+
+.lance:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../assets/sk8er-4.png");
+  background-repeat: no-repeat;
+  background-position: 80% 20%;
+  width: 32.67%;
+  height: 49.5%;
+  transition: letter-spacting .6s;
+}
+
+.rodney {
+  background-image: url("../assets/sk8er-3.png");
+  width: 32.67%;
+  height: 49.5%;
+  border: 5px solid rgb(227, 227, 227);
+  margin-left: 1%;
+}
+
+.rodney:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../assets/sk8er-3.png");
+  background-repeat: no-repeat;
+}
+
+.tommy {
+  float: right;
+  background-image: url("../assets/sk8er-2.png");
+  background-position: 78%;
+  width: 32.67%;
+  height: 101%;
+  border: 5px solid rgb(227, 227, 227);
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  transition: box-shadow .6s;
+}
+
+.tommy:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../assets/sk8er-2.png");
+  background-repeat: no-repeat;
+  background-position: 78%;
+  width: 32.67%;
+  height: 101%;
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+. {
+  background-image: url("../assets/sk8er-1.png");
+  background-position: center;
+  width: 66.4%;
+  height: 49.5%;
+  border: 5px solid rgb(227, 227, 227);
+  margin-top: 1%
+}
+
+.steve:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../assets/sk8er-1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 66.4%;
+  height: 49.5%;
+}
+
+
+
+.boards {
+  display: inline-block;
+  width: 100%;
+  height: 295px;
+  background-color: rgb(252, 252, 252);
+  padding: 20px;
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  margin-top: 30px;
+  padding-left: 45px;
+  transition: box-shadow .6s;
+}
+
+.boards:hover {
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+
+.boards__images {
+  position: relative;
+  display: inline-block;
+  text-align: justify;
+  margin-right: 30px;
+  text-align: justify;
+}
+
+.boards__images:nth-child(10) {
+  margin-right: 0;
+}
+
+/* Footer begins here */
+
+.footer__container {
+  width: 100%;
+  height: 362px;
+  background-color: rgb(252,252, 252);
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+  margin-top: 34px;
+  padding-top: 34px;
+  padding-left: 38px;
+  padding-right: 29px;
+  margin-bottom: 36px;
+  transition: box-shadow .6s;
+}
+
+.footer__container:hover {
+  box-shadow: 0px 4px 0px rgb(181, 46, 41);
+  transition: box-shadow .6s;
+}
+
+.contactUs__container {
+  display: inline-block;
+  position: relative;
+  width: 450px;
+  height: 282px;
+  vertical-align: top;
+}
+
+/* navbar container for socail media in the footer */
+.mediaBar__footer {
+  margin-top: 31px;
+}
+/* Styling for the *footer* social media icon images */
+
+.socialMedia__Footer {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  margin: 0px,10px;
+  vertical-align: top;
+  box-shadow: 0px 4px 0px rgba(255, 255, 255, 0.5);
+}
+
+.img--sizeFooter {
+  position: relative;
+  width: 60%;
+  height: 60%;
+  opacity: 0.2;
+  margin-top: 7px;
+  margin-left: 8px;
+  text-align: left;
+}
+
+.facebookFooter--icon {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+.facebookFooter {
+  background-color: rgb(79,	79,	79)	;
+  transition: background-color .6s;
+}
+
+.rssFooter {
+  background-color: rgb(174,	174, 174);
+  transition: background-color .6s;
+}
+
+.twitterFooter {
+  background-color: rgb(122,	122,	122);
+  transition: background-color .6s;
+}
+
+.youtubeFooter {
+  background-color: rgb(116,	116,	116);
+  transition: background-color .6s;
+}
+
+.facebookFooter:hover {
+  background-color: rgb(68, 88, 151);
+  transition: background-color .6s;
+}
+.rssFooter:hover {
+  background-color: rgb(204, 143, 50);
+  transition: background-color .6s;
+}
+.twitterFooter:hover {
+  background-color: rgb(106, 141, 199);
+  transition: background-color .6s;
+}
+.youtubeFooter:hover {
+  background-color: rgb(178, 56, 45);
+  transition: background-color .6s;
+}
+
+/*  Forms styling here*/
+
+.forms__container {
+  position: relative;
+  display: inline-block;
+  width: 434px;
+  float: right;
+}
+
+.contactUs__heading {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.inputs__box {
+  width: 100%;
+  height: 43px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: rgb(175, 175, 175);
+  padding: 11px;
+  /* Tried using border-style: inset, but couldnt get it to work correctly */
+  border-top: 4px solid rgb(175, 175, 175);
+  border-left: 4px solid rgb(175, 175, 175);
+  border-right: 1px solid rgb(175, 175, 175);
+  border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+.nameBox {
+  margin-bottom: 17px;
+}
+
+.emailBox {
+  margin-bottom: 17px;
+}
+
+.textInput {
+  height: 108px;
+  margin-bottom: 29px;
+  resize: none;
+}
+
+.submit {
+  width: 248px;
+  height: 40px;
+  font-family: Gill Sans, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: rgb(252, 252, 252);
+  background-color: rgb(180, 41, 46);
+  border:0 none;
+  border-radius: 0px;
+  float: right;
+  transition: letter-spacing .6s;
+}
+
+.submit:hover {
+  letter-spacing: 0.5rem;
+  transition: letter-spacing .6s;
+}
